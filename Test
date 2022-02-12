@@ -1,0 +1,67 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Notification";
+    Text = "Subscribe To Viper BG";
+    Duration = 10;
+}) 
+
+local Player = game.Players.LocalPlayer
+
+Player.Chatted:connect(function(cht)
+	if cht:match("ComingSoon") then
+  elseif cht:match(";mafbase") then 
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-74, -48, 78)           
+  elseif cht:match(";trap") then
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-107, -128, 84)
+  elseif cht:match(";inf money") then
+
+_G.toggle = true
+for i=1,99999999 do
+    local args = {
+        [1] = {
+            ["Amount"] = 0.5,
+            ["Mode"] = "W"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").RemoteEvent.ATM:FireServer(unpack(args))
+end
+  elseif cht:match(";uninf money") then
+
+_G.toggle = false
+for i=1,99999999 do
+    local args = {
+        [1] = {
+            ["Amount"] = 0.5,
+            ["Mode"] = "W"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").RemoteEvent.ATM:FireServer(unpack(args))
+end
+  elseif cht:match("infjump") then
+
+InfiniteJumpEnabled = true game:GetService("UserInputService").JumpRequest:connect(function()  if InfiniteJumpEnabled then   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")  end end)
+  elseif cht:match(";Credits") then
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Notification";
+    Text = "Made By Viper BG And Subcribe for more scripts :)";
+    Duration = 10;
+  elseif cht:match(";cmds") then
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Commands";
+    Text = ";mafbase ;trap ;inf money ;uninf money ;infjump ;Credits";
+    Duration = 15;
+})
+ end
+end)
+
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Notification";
+    Text = "Type ;cmds to see list of commands";
+    Duration = 10;
+})
